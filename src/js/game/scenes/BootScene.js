@@ -35,7 +35,7 @@ export default class BootScene extends Phaser.Scene {
 
   loadAssets() {
     this.load.image('logo-white', 'assets/images/logo-white.png');
-    this.load.image('stars', 'assets/images/stars.png');
+    this.load.image('stars', 'assets/images/stars.png');        
   }
 
   loadingText() {

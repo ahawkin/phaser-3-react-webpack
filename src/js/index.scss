@@ -1,1 +1,9 @@
 @import '../sass/main.scss';
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-primary;
+  font-size: 18px;
+  font-style: normal;
+  text-rendering: optimizeLegibility;
+}

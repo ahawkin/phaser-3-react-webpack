@@ -4,6 +4,8 @@ import Boot from './Boot/Boot';
 import MainMenu from './MainMenu/MainMenu';
 import * as sceneKeys from '../constants/sceneKeys';
 
+import './App.scss';
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -16,16 +18,6 @@ export default class App extends React.Component {
 
     this.initialiseGame = this.initialiseGame.bind(this);
     this.switchScene = this.switchScene.bind(this);
-  }
-
-  setupBootScene(sceneManager) {
-    return (
-      <Boot
-        sceneKey={sceneKeys.BOOT_SCENE_KEY}
-        sceneManager={sceneManager}
-        switchScene={this.switchScene}
-      />
-    );
   }
 
   initialiseGame(game) {
@@ -41,38 +33,51 @@ export default class App extends React.Component {
       case sceneKeys.BOOT_SCENE_KEY:
         this.setState({
           sceneKey: sceneKeys.BOOT_SCENE_KEY,
-          sceneContainer: this.setupBootScene(sceneManager),
+          sceneContainer: this.renderBootScene(sceneManager),
         });
         break;
       case sceneKeys.MAIN_MENU_SCENE_KEY:
         this.setState({
           sceneKey: sceneKeys.MAIN_MENU_SCENE_KEY,
-          sceneContainer: <MainMenu
-            sceneKey={sceneKeys.MAIN_MENU_SCENE_KEY}
-            sceneManager={sceneManager}
-            switchScene={this.switchScene}
-            previousScene={this.state.sceneKey}
-          />,
+          sceneContainer: this.renderMenuMainScene(sceneManager),
         });
         break;
       default:
         this.setState({
           sceneKey: sceneKeys.BOOT_SCENE_KEY,
-          sceneContainer: <Boot
-            sceneKey={sceneKeys.BOOT_SCENE_KEY}
-            sceneManager={sceneManager}
-            switchScene={this.switchScene}
-          />,
+          sceneContainer: this.renderBootScene(sceneManager),
         });
         break;
     }
   }
 
+  renderBootScene(sceneManager) {
+    return (
+      <Boot
+        sceneKey={sceneKeys.BOOT_SCENE_KEY}
+        sceneManager={sceneManager}
+        switchScene={this.switchScene}
+        previousScene={this.state.sceneKey}
+      />
+    );
+  }
+
+  renderMenuMainScene(sceneManager) {
+    return (
+      <MainMenu
+        sceneKey={sceneKeys.MAIN_MENU_SCENE_KEY}
+        sceneManager={sceneManager}
+        switchScene={this.switchScene}
+        previousScene={this.state.sceneKey}
+      />
+    );
+  }
+
   render() {
     return (
-      <div>
+      <div className="game">
         <Game initialiseGame={this.initialiseGame} />
-        <div className="overlay" id={this.state.sceneKey}>
+        <div className="game__overlay" id={this.state.sceneKey}>
           {this.state.sceneContainer}
         </div>
       </div>

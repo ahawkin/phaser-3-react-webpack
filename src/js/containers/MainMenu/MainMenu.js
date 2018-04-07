@@ -1,6 +1,8 @@
 import React from 'react';
 import MainMenuScene from '../../game/scenes/MainMenuScene';
 
+import './MainMenu.scss';
+
 export default class MainMenu extends React.Component {
   componentWillMount() {
     const {
@@ -15,6 +17,12 @@ export default class MainMenu extends React.Component {
   }
 
   render() {
-    return <p>MainMenu State</p>;
+    return (
+      <ul className="main-menu">
+        <li className="main-menu__item"><button onClick={() => { this.props.switchScene('boot'); }} className="main-menu__button">Play</button></li>
+        <li className="main-menu__item"><button className="main-menu__button">About</button></li>
+        <li className="main-menu__item"><button className="main-menu__button">Options</button></li>
+      </ul>
+    );
   }
 }
