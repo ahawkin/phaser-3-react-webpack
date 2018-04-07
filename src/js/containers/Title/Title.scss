@@ -1,0 +1,33 @@
+.main-menu {
+  position: relative;
+  top: 52.5%;
+  text-align: center;
+  color: #E6E6E6;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+
+  &__button {
+    width: 225px;
+    height: 55px;
+    font-size: 24px;
+    background: none;
+    border: 1px solid #E6E6E6;
+    outline: none;
+
+    &:hover {
+      background: rgba($color: #E6E6E6, $alpha: 0.3)
+    }
+  }
+
+  &__meta {
+    opacity: 0.5;
+  }
+}

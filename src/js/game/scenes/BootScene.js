@@ -64,6 +64,6 @@ export default class BootScene extends Phaser.Scene {
 
   create() {
     console.log('Boot scene started!');
-    this.switchScene(sceneKeys.MAIN_MENU_SCENE_KEY);
+    this.switchScene(sceneKeys.TITLE_SCENE_KEY);
   }
 }

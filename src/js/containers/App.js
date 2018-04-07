@@ -1,7 +1,7 @@
 import React from 'react';
-import Game from './Game/Game';
+import Main from './Main/Main';
 import Boot from './Boot/Boot';
-import MainMenu from './MainMenu/MainMenu';
+import Title from './Title/Title';
 import * as sceneKeys from '../constants/sceneKeys';
 
 import './App.scss';
@@ -36,9 +36,9 @@ export default class App extends React.Component {
           sceneContainer: this.renderBootScene(sceneManager),
         });
         break;
-      case sceneKeys.MAIN_MENU_SCENE_KEY:
+      case sceneKeys.TITLE_SCENE_KEY:
         this.setState({
-          sceneKey: sceneKeys.MAIN_MENU_SCENE_KEY,
+          sceneKey: sceneKeys.TITLE_SCENE_KEY,
           sceneContainer: this.renderMenuMainScene(sceneManager),
         });
         break;
@@ -64,8 +64,8 @@ export default class App extends React.Component {
 
   renderMenuMainScene(sceneManager) {
     return (
-      <MainMenu
-        sceneKey={sceneKeys.MAIN_MENU_SCENE_KEY}
+      <Title
+        sceneKey={sceneKeys.TITLE_SCENE_KEY}
         sceneManager={sceneManager}
         switchScene={this.switchScene}
         previousScene={this.state.sceneKey}
@@ -76,7 +76,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className="game">
-        <Game initialiseGame={this.initialiseGame} />
+        <Main initialiseGame={this.initialiseGame} />
         <div className="game__overlay" id={this.state.sceneKey}>
           {this.state.sceneContainer}
         </div>

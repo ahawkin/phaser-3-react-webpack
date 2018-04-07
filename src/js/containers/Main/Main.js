@@ -1,13 +1,12 @@
 import React from 'react';
-import { setupGame, destroyGame } from '../../game/main';
+import Game from '../../game/Game';
 
-import './Game.scss';
+import './Main.scss';
 
-let game;
+export default class Main extends React.Component {
+  componentWillMount() {
+    const game = Game.setupGame('game');
 
-export default class Game extends React.Component {
-  componentDidMount() {
-    game = setupGame('game');
     this.props.initialiseGame(game);
   }
 
@@ -16,7 +15,7 @@ export default class Game extends React.Component {
   }
 
   componentWillUnmount() {
-    game = destroyGame(game);
+    Game.destroyGame();
   }
 
   render() {
