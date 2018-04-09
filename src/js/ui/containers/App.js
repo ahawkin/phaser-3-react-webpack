@@ -2,6 +2,7 @@ import React from 'react';
 import Main from './Main/Main';
 import Boot from './Boot/Boot';
 import Title from './Title/Title';
+import Play from './Play/Play';
 import * as sceneKeys from '../../constants/sceneKeys';
 
 import './App.scss';
@@ -42,6 +43,12 @@ class App extends React.Component {
           sceneContainer: this.renderMenuMainScene(sceneManager),
         });
         break;
+      case sceneKeys.PLAY_SCENE_KEY:
+        this.setState({
+          sceneKey: sceneKeys.PLAY_SCENE_KEY,
+          sceneContainer: this.renderPlayScene(sceneManager),
+        });
+        break;
       default:
         this.setState({
           sceneKey: sceneKeys.BOOT_SCENE_KEY,
@@ -65,6 +72,17 @@ class App extends React.Component {
   renderMenuMainScene(sceneManager) {
     return (
       <Title
+        sceneKey={sceneKeys.TITLE_SCENE_KEY}
+        sceneManager={sceneManager}
+        switchScene={this.switchScene}
+        previousScene={this.state.sceneKey}
+      />
+    );
+  }
+
+  renderPlayScene(sceneManager) {
+    return (
+      <Play
         sceneKey={sceneKeys.TITLE_SCENE_KEY}
         sceneManager={sceneManager}
         switchScene={this.switchScene}

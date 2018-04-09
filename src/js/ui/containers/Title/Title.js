@@ -20,7 +20,7 @@ class Title extends React.Component {
     return (
       <div className="main-menu">
         <ul className="main-menu__list">
-          <li className="main-menu__item"><button onClick={() => { this.props.switchScene('boot'); }} className="main-menu__button">Play</button></li>
+          <li className="main-menu__item"><button onClick={() => { this.props.switchScene('play'); }} className="main-menu__button">Play</button></li>
           <li className="main-menu__item"><button className="main-menu__button">About</button></li>
           <li className="main-menu__item"><button className="main-menu__button">Options</button></li>
         </ul>
