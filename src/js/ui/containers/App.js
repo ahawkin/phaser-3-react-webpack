@@ -2,7 +2,7 @@ import React from 'react';
 import Main from './Main/Main';
 import Boot from './Boot/Boot';
 import Title from './Title/Title';
-import * as sceneKeys from '../constants/sceneKeys';
+import * as sceneKeys from '../../constants/sceneKeys';
 
 import './App.scss';
 

@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import * as sceneKeys from '../../constants/sceneKeys';
+import * as sceneKeys from '../constants/sceneKeys';
 
 export default class BootScene extends Phaser.Scene {
   constructor(switchScene) {

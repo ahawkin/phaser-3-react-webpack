@@ -1,5 +1,5 @@
 import Phaser from 'phaser';
-import { TITLE_SCENE_KEY } from '../../constants/sceneKeys';
+import { TITLE_SCENE_KEY } from '../constants/sceneKeys';
 
 let stars;
 

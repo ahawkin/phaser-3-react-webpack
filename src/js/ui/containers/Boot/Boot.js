@@ -1,5 +1,5 @@
 import React from 'react';
-import BootScene from '../../game/scenes/BootScene';
+import BootScene from '../../../scenes/BootScene';
 
 export default class Boot extends React.Component {
   componentWillMount() {

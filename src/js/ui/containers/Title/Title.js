@@ -1,5 +1,5 @@
 import React from 'react';
-import TitleScene from '../../game/scenes/TitleScene';
+import TitleScene from '../../../scenes/TitleScene';
 
 import './Title.scss';
 
