@@ -3,7 +3,7 @@ import TitleScene from '../../../scenes/TitleScene';
 
 import './Title.scss';
 
-export default class Title extends React.Component {
+class Title extends React.Component {
   componentWillMount() {
     const {
       sceneKey,
@@ -29,3 +29,5 @@ export default class Title extends React.Component {
     );
   }
 }
+
+export default Title;

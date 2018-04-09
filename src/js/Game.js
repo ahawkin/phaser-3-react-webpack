@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import CONFIG from './constants/config';
 
-export default class Game {
+class Game {
   static createGame() {
     return new Phaser.Game(CONFIG);
   }
@@ -10,3 +10,5 @@ export default class Game {
     game.destroy();
   }
 }
+
+export default Game;

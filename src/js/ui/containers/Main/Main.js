@@ -3,7 +3,7 @@ import Game from '../../../Game';
 
 import './Main.scss';
 
-export default class Main extends React.Component {
+class Main extends React.Component {
   constructor(props) {
     super(props);
 
@@ -26,3 +26,5 @@ export default class Main extends React.Component {
     return <div className="game__wrapper" id="game" />;
   }
 }
+
+export default Main;

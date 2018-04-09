@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import * as sceneKeys from '../constants/sceneKeys';
 
-export default class BootScene extends Phaser.Scene {
+class BootScene extends Phaser.Scene {
   constructor(switchScene) {
     super({
       key: sceneKeys.BOOT_SCENE_KEY,
@@ -67,3 +67,5 @@ export default class BootScene extends Phaser.Scene {
     this.switchScene(sceneKeys.TITLE_SCENE_KEY);
   }
 }
+
+export default BootScene;

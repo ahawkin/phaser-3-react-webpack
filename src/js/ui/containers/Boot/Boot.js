@@ -1,7 +1,7 @@
 import React from 'react';
 import BootScene from '../../../scenes/BootScene';
 
-export default class Boot extends React.Component {
+class Boot extends React.Component {
   componentWillMount() {
     const {
       sceneKey,
@@ -18,3 +18,5 @@ export default class Boot extends React.Component {
     return null;
   }
 }
+
+export default Boot;
