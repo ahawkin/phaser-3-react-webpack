@@ -1,8 +1,8 @@
 import React from 'react';
 import Canvas from './components/Canvas/Canvas';
-import Boot from './scenes/Boot/Boot';
-import Title from './scenes/Title/Title';
-import Play from './scenes/Play/Play';
+import Boot from './containers/Boot/Boot';
+import Title from './containers/Title/Title';
+import Play from './containers/Play/Play';
 import * as sceneKeys from '../constants/sceneKeys';
 
 import './App.scss';
