@@ -1,9 +1,9 @@
 import React from 'react';
-import Main from './Main/Main';
-import Boot from './Boot/Boot';
-import Title from './Title/Title';
-import Play from './Play/Play';
-import * as sceneKeys from '../../constants/sceneKeys';
+import Canvas from './components/Canvas/Canvas';
+import Boot from './scenes/Boot/Boot';
+import Title from './scenes/Title/Title';
+import Play from './scenes/Play/Play';
+import * as sceneKeys from '../constants/sceneKeys';
 
 import './App.scss';
 
@@ -94,7 +94,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="game">
-        <Main initialiseGame={this.initialiseGame} />
+        <Canvas initialiseGame={this.initialiseGame} />
         <div className="game__overlay" id={this.state.sceneKey}>
           {this.state.sceneContainer}
         </div>
